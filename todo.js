@@ -34,13 +34,22 @@ var idArray=[];
 function verify(k)
 {
     return new Promise(function(resolve,reject){
+        var stat = idArray.includes(k);
+        if (stat == false)
+        {
         idArray.push(k);
         console.log(k);
-        if(idArray.length>=5){
+        if(idArray.length==5){
             resolve();
         }
         else{
-            reject("not completed");
+            reject("length is " +idArray.length +" hence not completed");
+        }
+        }
+        else
+        {
+        idArray.pop(k);
+        idArray.forEach(function(){console.log(e);})
         }
     })    
     
